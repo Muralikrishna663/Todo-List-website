@@ -3,50 +3,6 @@
 <head>
   <title>Todo List</title>
   <link rel="stylesheet" href="styles/11-todo-list.css">
-  <styles>
-    
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.todo-grid,
-.todo-list-grid {
-  display: grid;
-  grid-template-columns: 200px 150px 100px;
-  column-gap: 10px;
-  row-gap: 10px;
-  align-items: center;
-}
-
-.todo-list-grid {
-  margin-bottom: 10px;
-  align-items: stretch;
-}
-.name-input,
-.due-date-input {
-  font-size: 15px;
-  padding: 8px;
-}
-
-.add-todo-list {
-  background-color: green;
-  color: white;
-  border: none;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.delete-button {
-  background-color: darkred;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-  </styles>
-
 </head>
 <body>
   <p>Todo List Practice 1</p>
@@ -56,62 +12,6 @@ body {
     <button onclick="addTodo();" class="add-todo-list">Add</button>
   </div>
   <div class="js-todoList todo-grid"></div>
-<script src="scripts/11-todo-list.js">
-  
-const todoList = [{name : 'make dinner', dueDate : '2024-07-01'},
-  {name : 'wash dishes', dueDate : '2024-07-01'}];
-
-renderTodoList();
-
-function renderTodoList(){
-  let todoListHTML = '';
-
-  for(let i = 0; i < todoList.length; i++){
-    const todoObject = todoList[i];
-    //const name = todoObject.name;
-    //const dueDate = todoObject.dueDate;
-    const {name , dueDate} = todoObject;
-
-    const todoHTML = `
-
-      <div>${name} </div>
-
-      <div>${dueDate} </div>
-
-      <button onclick = "
-        todoList.splice(${i}, 1);
-        renderTodoList();" class = "delete-button">
-      Delete</button>
-      
-    `; 
-    todoListHTML += todoHTML;
-  }
-
-    document.querySelector('.js-todoList')
-      .innerHTML = todoListHTML;
-}
-
-function addTodo(){
-
-  const inputElement = document.querySelector('.js-input');
-  const inputDate = document.querySelector('.js-due-date');
-
-  const name = inputElement.value;
-  const dueDate = inputDate.value;
-
-  todoList.push(
-    {//name : name,
-      //dueDate : dueDate,
-      name,
-     dueDate});
-
-  console.log(todoList);
-
-  inputElement.value = '';
-  inputDate.value = '';
-  renderTodoList();
-}
-
-</script>
+<script src="scripts/11-todo-list.js"></script>
 </body>
 </html>
