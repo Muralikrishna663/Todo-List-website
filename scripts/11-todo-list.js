@@ -1,4 +1,4 @@
-const todoList = [{name : '', dueDate : ''}];
+const todoList = [];
 
 renderTodoList();
 
